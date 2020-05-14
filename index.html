@@ -63,7 +63,9 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li> -->
-                    <li class="nav-item">
+
+                    <!-- pgcommented navbar about links -->
+                    <!-- <li class="nav-item">
                         <a id="chat-nav" class="nav-link js-scroll-trigger hide" href="#messageArea">Chatroom</a>
                     </li>
                     <li class="nav-item">
@@ -71,7 +73,8 @@
                     </li>
                     <li class="nav-item">
                         <a id="contact-nav" class="nav-link js-scroll-trigger hide" href="#contact">Contact</a>
-                    </li>
+                    </li> -->
+
                     <li class="nav-item">
                         <a target="_blank" rel="noopener noreferrer" class="nav-link js-scroll-trigger" href="https://www.facebook.com/vynchronize">
                             <i class="fab fa-facebook"></i>
@@ -122,6 +125,7 @@
                 </form>
             </div>
         </div>
+        <!-- User Form above (First Page) PGcommented-->
 
         <div id="roomArea">
             <!-- Heading Row -->
@@ -132,6 +136,7 @@
                     <div class="mobile-hide"><b>Mobile User</b>, please play the video once manually to give the browser permission to control the video player. </div>
                     <!-- <hr style="height:0pt; visibility:hidden;" /> -->
 
+                    <!-- this is the player selction dropdown menu PGCOMMENTED-->
                     <div style="margin: 10px" class="dropdown">
                         <button style="background-color: #007bff" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-video"></i> Player
@@ -150,6 +155,7 @@
 
                     <!-- INVITE MOVED TO MODAL -->
                     <!-- <p id="invite">Invite a friend! Send them the link: vynchronize.herokuapp.com/ROOMNUM</p> -->
+
                     <h2><span id="hostlabel" class="label label-default"><i class="fas fa-user"></i> Current Host: Kyle </span></h2>
 
                     <!----------------------------------- PLAYER AREA ----------------------------------->
@@ -176,6 +182,9 @@
 
                     <!----------------------------------- PLAYER AREA ----------------------------------->
                     <!-- <hr> -->
+
+                    <!---------------------- all controls button area PGCOMMENTED ---------------------->
+
                     <div>
                         <button id="playButton" onclick="playVideo(roomnum)" style="margin-top:.5rem" class="btn btn-primary"><i class="fa fa-play"></i> Play / <i class="fa fa-pause"></i> Pause</button>
 
@@ -205,6 +214,9 @@
                         <br/>
 
                     </div>
+                    <!---------------------- all controls button area ---------------------->
+
+
                     <!-- <input type="file" id="html5-input" /> -->
                     <!-- Playlist shit -->
                     <div id="visual-queue" class="vid-list-container">
@@ -250,17 +262,22 @@
 
                     <!-- <br/> -->
                     <div class="col-md-13">
+
+                        <!-- all user list section PGCOMMENTED -->
                         <div class="well online-users noscrollbar">
                             <ul class="list-group" id="users"></ul>
                         </div>
 
-                        <!-- Trigger the modal with a button -->
+                        <!-- Trigger INVITE MODAL with button PGCOMMENTED-->
                         <button style="background-color: #007bff" type="button" class="nonmobile-hide btn btn-info btn-sm invite-button" data-toggle="modal" data-target="#inviteModal"><i style="width: 30px; height: 30px;" class="fas fa-user-plus"></i><br><h5>Invite</h5></button>
+
                     </div>
+
                     <hr style="height:0pt; visibility:hidden;" />
+
                     <h5 style="color:gray;">Chatroom</h5>
 
-                    <!-- Modal -->
+                    <!-- INVITE Modal WHEN BUTTON PRESSED pgcommented -->
                     <div id="inviteModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
@@ -288,12 +305,18 @@
                     <!-- </div> -->
                     <!-- </div> -->
 
+
+
                     <div id="messageArea" class="row">
                         <br/>
                         <!-- <h2 style="color:gray">Chat</h2> -->
                         <div class="col-md-12">
+
+                            <!-- Message display div pgcommented-->
                             <div class="chat noscrollbar" id="chat"></div>
-                            <!-- Message Form (Enter Message) -->
+                            
+                            
+                            <!-- message typing box pgcommented -->
                             <form id="messageForm">
                                 <div class="form-group">
                                     <br/>
@@ -305,20 +328,24 @@
                                     <br />
                                 </div>
                             </form>
+
                         </div>
                     </div>
+
+
+
                 </div>
                 <!-- /.col-md-4 -->
             </div>
 
             <!-- /.row -->
 
-            <!-- Call to Action Well -->
-            <div class="card text-white bg-secondary my-4 text-center">
+            <!-- Call to Action Well PGcommented-->
+            <!-- <div class="card text-white bg-secondary my-4 text-center">
                 <div class="card-body">
                     <p class="text-white m-0">*The synchronization may not be perfect! It's a work in progress, submit an issue on github if you wish to submit a bug report/suggestion.</p>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Content Row -->
             <!-- <div class="row">
@@ -363,7 +390,8 @@
             <!-- /.row -->
 
             <!-- <hr style="height:20pt; visibility:hidden;" /> -->
-            <section id="about" class="bg-light">
+
+            <!-- <section id="about" class="bg-light" PGcommented>
                 <hr style="height:100pt; visibility:hidden;" />
 
                 <div class="container">
@@ -378,10 +406,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <hr style="height:20pt; visibility:hidden;" />
+            </section> -->
+            <!-- <hr style="height:20pt; visibility:hidden;" /> -->
 
-            <section id="contact" class="bg-light">
+            <!-- <section id="contact" class="bg-light" PGcommented>
                 <hr style="height:100pt; visibility:hidden;" />
 
                 <div class="container">
@@ -400,7 +428,7 @@
                     </div>
                 </div>
             </section>
-            <hr style="height:50pt; visibility:hidden;" />
+            <hr style="height:50pt; visibility:hidden;" /> -->
 
         </div>
     </div>
@@ -416,8 +444,8 @@
 
     <script>
         var socket = io.connect();
-        var roomnum = 1
-        var id = "M7lc1UVf-VE"
+        var roomnum = 1          // global var identifying roomNumber (actually room name) pg
+        //var id = "M7lc1UVf-VE"     // pg - guess this is now useless (used for youtube-video id)
         var username = ""
         // Don't allow trailing or leading whitespace!
         var nosymbols = new RegExp("^(([a-zA-Z0-9_-][a-zA-Z0-9 _-]*[a-zA-Z0-9_-])|([a-zA-Z0-9_-]*))$");
@@ -450,6 +478,7 @@
             // });
 
 
+                // this is submit for chat box
             $messageForm.submit(function(e) {
                 e.preventDefault();
                 // console.log("Submitted");
@@ -531,10 +560,10 @@
                             // Move footer to correct position
                             document.getElementById('footer').style.position = 'relative';
 
-                            // Show header buttons!
-                            document.getElementById('chat-nav').style.display = 'block';
-                            document.getElementById('about-nav').style.display = 'block';
-                            document.getElementById('contact-nav').style.display = 'block';
+                            // Show header buttons! pgcommented
+                            // document.getElementById('chat-nav').style.display = 'block';
+                            // document.getElementById('about-nav').style.display = 'block';
+                            // document.getElementById('contact-nav').style.display = 'block';
 
                             // No longer using initarea
                             // var initStuff = document.getElementById("initArea")
@@ -565,6 +594,8 @@
                 }
             });
 
+            
+            // it adds any any new user to the room users list when pinged PGCOMMENTED
             socket.on('get users', function(data) {
                 var html = '';
                 for (i = 0; i < data.length; i++) {
@@ -719,7 +750,7 @@
     </script>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="js/dependencies/jquery.min.js"></script>
+    <!-- <script src="js/dependencies/jquery.min.js"></script> already available from head--> 
     <script src="js/dependencies/bootstrap.bundle.min.js"></script>
     <script src="js/dependencies/scrolling-nav.js"></script>
     <script src="js/dependencies/bootstrap-notify.min.js"></script>

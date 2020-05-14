@@ -4,6 +4,8 @@
   "description": "Video synchronization app",
   "main": "server.js",
   "scripts": {
+    "dev":"nodemon server.js",
+    "prod":"npm server.js",
     "test": "jshint test.js"
   },
   "repository": {
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/kyle8998/Vynchronize#readme",
   "devDependencies": {
-    "jshint": "^2.11.0"
+    "jshint": "^2.11.0",
+    "nodemon": "^2.0.3"
   }
 }
