@@ -45,8 +45,10 @@
 
  html, body {
      max-width: 100%;
+     min-height:100%; /*pg*/
      overflow-x: hidden;
  }
+
 
  .headsize {
      padding-top: 7em;
@@ -413,12 +415,30 @@
      transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
  }
 
- .footer {
-     position: absolute;
-     bottom: 0;
-     width: 100%;
- }
 
  .hide {
      display: none;
  }
+
+/* pg-styles */
+
+#userForm{
+    border: solid 1px;
+    border-radius:0.7rem;
+}
+#userForm .form-group {
+    margin:4vh 4vh;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer p{
+    margin-top:1rem !important;
+}
+ 
+/* pg-styles */

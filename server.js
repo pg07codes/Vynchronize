@@ -34,13 +34,13 @@ server.listen(PORT, () => {
 // });
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '/views/homepage.html'));
+    res.sendFile(path.join(__dirname, '/views/home.html'));
 });
 
 app.get('/rooms/:room?', function (req, res) {
     if (req.params.room !== undefined)
         given_room = req.params.room
-    res.sendFile(path.join(__dirname, '/views/index.html'));
+    res.sendFile(path.join(__dirname, '/views/rooms.html'));
 });
 
 // was the only option as OP has done some set-id/reset-url socket call that looks fishy -- pgfixed
