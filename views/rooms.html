@@ -115,13 +115,14 @@
                         <br />
                         <p style="color:red; margin-bottom: 0px" id="missinginfo2"></p>
                         <label style="color: white; font-weight: bold;">Enter Room ID (Default 1)</label>
-                        <button type="button" onClick="randomroom()" class="btn btn-primary random">Random</button>
+                        <button type="button" onClick="randomroom()" class="btn btn-sm btn-outline-light random">Random</button>
                         <br />
                         <input class="form-control" id="roomnum" />
                         <br />
 
-                        <input style="margin-top: 10px;" type="submit" class="btn btn-primary" value="Enter" />
-                        <hr style="height:65pt; visibility:hidden;" />
+                        <input style="margin-top: 10px;" type="submit" class="btn btn-success" value="Enter" />
+                        <!-- <hr style="height:65pt; visibility:hidden;" /> -->
+                        
                     </div>
                 </form>
             </div>
@@ -474,14 +475,14 @@
         </div>
     </div>
 
-    <!-- Footer  pg-if footer is commented it just gives error . -->
+    <!-- Footer pg-commented -->
 
-    <footer id="footer" class="bg-dark footer">
+    <!-- <footer id="footer" class="bg-dark footer">
         <div class="container">
             <p class="text-center text-white">Copyright &copy; Vynchronize 2018</p>
         </div>
 
-    </footer>
+    </footer> -->
 
     <script>
         var socket = io.connect();
@@ -599,7 +600,8 @@
                             $roomArea.show();
 
                             // Move footer to correct position
-                            document.getElementById('footer').style.position = 'relative';
+                            
+                            // document.getElementById('footer').style.position = 'relative'; pgcommented
 
                             // Show header buttons! pgcommented
                             // document.getElementById('chat-nav').style.display = 'block';

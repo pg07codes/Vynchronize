@@ -83,13 +83,12 @@
      text-align: center;
  }
 
- .random {
+ /* .random { pg
      margin: 10px;
      height: 30px;
      width: 120px;
      padding: 2px;
-     background-color: black;
- }
+ } */
 
  .right-header {
      float: right;
@@ -394,7 +393,7 @@
 
  .ghost-button-full-color {
      float: right;
-     display: inline-block;
+     /* display: inline-block; pgcommented as float / display dont work together*/
      width: 25px;
      padding-bottom: 10px;
      /* height: 25px; */
@@ -421,6 +420,10 @@
  }
 
 /* pg-styles */
+
+#userFormArea{
+    margin-top: 10vh;
+}
 
 #userForm{
     border: solid 1px;
