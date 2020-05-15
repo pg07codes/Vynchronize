@@ -38,7 +38,7 @@
      width: 100vw;
      height: 100vh;
      background-color: rgba(192, 192, 192, 0.5);
-     background-image: url("/img/loader.gif");
+     background-image: url("/public/img/loader.gif");
      background-repeat: no-repeat;
      background-position: center;
  }

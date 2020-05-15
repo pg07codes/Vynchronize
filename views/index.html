@@ -23,8 +23,8 @@
     <title>Vynchronize</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/animate.css" rel="stylesheet">
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -35,15 +35,15 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="css/small-business.css" rel="stylesheet">
+    <link href="/public/css/small-business.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/mobile-style.css" rel="stylesheet">
-    <link href="css/html5player.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="/public/css/mobile-style.css" rel="stylesheet">
+    <link href="/public/css/html5player.css" rel="stylesheet">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon-16x16.png">
 
 </head>
 
@@ -52,7 +52,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#Home"><img src="img/logo.png" alt="Vynchronize logo" height="40" width="40"> Vynchronize</a>
+            <a class="navbar-brand js-scroll-trigger" href="#Home"><img src="/public/img/logo.png" alt="Vynchronize logo" height="40" width="40"> Vynchronize</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -143,7 +143,7 @@
                         </button>
                         <div class="form-control dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 0)"><i class="fab fa-youtube"></i> YouTube</a>
-                            <a class="dropdown-item" onclick="changePlayer(roomnum, 1)"><img width="14px" height="14px" src="img/dailymotion-logo.svg" alt="Daily Motion Logo"> Daily Motion</a>
+                            <a class="dropdown-item" onclick="changePlayer(roomnum, 1)"><img width="14px" height="14px" src="/public/img/dailymotion-logo.svg" alt="Daily Motion Logo"> Daily Motion</a>
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 2)"><i class="fab fa-vimeo"></i> Vimeo</a>
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 3)"><i class="fas fa-file-video"></i> HTML5 Player (.mp4/.webm) (Beta)</a>
                         </div>
@@ -545,7 +545,7 @@
                 // If Room contains symbols
                 // Can only be reached if the user decided to be sneaky and paste them!
                 else if (!nosymbols.test($roomnum.val())) {
-                    console.log("ENTER A PROPER ROOMNUMBER")
+                    console.log("ENTER A PROPER ROOMNAME")
                     var noname = document.getElementById('missinginfo')
                     noname.innerHTML = ""
                     var noname2 = document.getElementById('missinginfo2')
@@ -574,10 +574,13 @@
                                 roomnum = $roomnum.val()
                             }
 
-                            // Sets the invite link (roomnum)
+                            // Sets the invite link in the model (roomnum)
                             // document.getElementById('invite').innerHTML = "vynchronize.herokuapp.com/" + roomnum
-                            document.getElementById("inv_input").value = "vynchronize.herokuapp.com/" + roomnum
-                            history.pushState('', 'Vynchronize', roomnum);
+                            document.getElementById("inv_input").value = "vynchronize.herokuapp.com/" + roomnum; // PGTOFIX
+
+                            //pg- seems this is used for forced url change in browser to expected path
+                            // so i have used to for my path of '/rooms/roomno'
+                            history.pushState('', 'Vynchronize', '/rooms/'+roomnum); 
 
                         }
                     });
@@ -721,7 +724,7 @@
             }
             // Reset url for next person
             // Workaround
-            socket.emit('reset url')
+            socket.emit('reset url') // this is used because otherwise..given_room is a global var and persists across requests , so manually clearing it is necesaary for room.input.val to be "".
         });
 
         function copyInvite() {
@@ -751,30 +754,30 @@
 
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="js/dependencies/jquery.min.js"></script> already available from head--> 
-    <script src="js/dependencies/bootstrap.bundle.min.js"></script>
-    <script src="js/dependencies/scrolling-nav.js"></script>
-    <script src="js/dependencies/bootstrap-notify.min.js"></script>
+    <script src="/public/js/dependencies/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/dependencies/scrolling-nav.js"></script>
+    <script src="/public/js/dependencies/bootstrap-notify.min.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="js/dependencies/jquery.easing.min.js"></script>
+    <script src="/public/js/dependencies/jquery.easing.min.js"></script>
 
 
     <!-- My JS files -->
-    <script src="js/sync.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/host.js"></script>
-    <script src="js/events.js"></script>
-    <script src="js/notify.js"></script>
+    <script src="/public/js/sync.js"></script>
+    <script src="/public/js/player.js"></script>
+    <script src="/public/js/host.js"></script>
+    <script src="/public/js/events.js"></script>
+    <script src="/public/js/notify.js"></script>
 
     <!-- Youtube -->
-    <script src="js/yt.js"></script>
+    <script src="/public/js/yt.js"></script>
     <!-- Daily Motion -->
     <script src="https://api.dmcdn.net/all.js"></script>
-    <script src="js/dm.js"></script>
+    <script src="/public/js/dm.js"></script>
     <!-- Vimeo -->
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="js/vimeo.js"></script>
+    <script src="/public/js/vimeo.js"></script>
     <!-- HTML5 Player -->
-    <script src="js/html5.js"></script>
+    <script src="/public/js/html5.js"></script>
 
 </body>
 

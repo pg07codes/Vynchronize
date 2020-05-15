@@ -83,7 +83,7 @@
 			return;
 		}
 
-		console.log('video metadata', video.duration, video.videoWidth, video.videoHeight);
+		console.log('video metadata--------------', video.duration, video.videoWidth, video.videoHeight);
 		durationInMilliseconds = Math.round(DURATION * 1000);
 		if (remoteClock.accuracy() > 100) {
 			return;
