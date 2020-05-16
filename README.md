@@ -4,5 +4,5 @@
 
 Vynchronize is a real-time online video synchronization platform. You can enjoy any video available online with friends who may not be next to you!
 
-- Find the original repository on (here) [https://github.com/kyle8998/Vynchronize].
+- Find the original repository [here](https://github.com/kyle8998/Vynchronize)
 
