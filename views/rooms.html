@@ -78,15 +78,15 @@
                         <a id="contact-nav" class="nav-link js-scroll-trigger hide" href="#contact">Contact</a>
                     </li> -->
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a target="_blank" rel="noopener noreferrer" class="nav-link js-scroll-trigger"
-                            href="https://www.facebook.com/vynchronize">
+                            href="https://www.facebook.com/">
                             <i class="fab fa-facebook"></i>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a target="_blank" rel="noopener noreferrer" class="nav-link js-scroll-trigger"
-                            href="https://github.com/kyle8998/Vynchronize">
+                            href="https://github.com/pg07codes/Vynchronize">
                             <i class="fab fa-github"></i>
                         </a>
                     </li>
@@ -129,20 +129,26 @@
         </div>
         <!-- User Form above (First Page) PGcommented-->
 
+        <!-- roomarea page begins here -->
         <div id="roomArea">
             <!-- Heading Row -->
             <div class="row my-4" style="margin-top: 0px !important;">
                 <div class="col-lg-7">
 
-                    <div class="nonmobile-hide"><b>Note: </b>Only the host can control the video using the native
+                    <!-- pgcommented these instructions (on top of page)for now  -->
+
+                    <!-- <div class="nonmobile-hide"><b>Note: </b>Only the host can control the video using the native
                         video
                         player controls </div>
                     <div class="mobile-hide"><b>Mobile User</b>, please play the video once manually to give the
                         browser
-                        permission to control the video player. </div>
+                        permission to control the video player. </div> -->
+
                     <!-- <hr style="height:0pt; visibility:hidden;" /> -->
 
-                    <!-- this is the player selction dropdown menu PGCOMMENTED-->
+
+                    <!-- this is the player selection dropdown menu PGCOMMENTED-->
+
                     <div style="margin: 10px" class="dropdown">
                         <button style="background-color: #007bff" class="btn btn-info dropdown-toggle" type="button"
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -168,11 +174,11 @@
                     <!-- INVITE MOVED TO MODAL -->
                     <!-- <p id="invite">Invite a friend! Send them the link: vynchronize.herokuapp.com/ROOMNUM</p> -->
 
-                    <h2><span id="hostlabel" class="label label-default"><i class="fas fa-user"></i> Current Host:
-                            Kyle
-                        </span></h2>
+                    <!-- this gets replaced using DOM by actual host name  pgcommented -->
+                    <h2><span id="hostlabel" class="label label-default"><i class="fas fa-user"></i>
+                         Current Host:Kyle </span></h2>
 
-                    <!----------------------------------- PLAYER AREA ----------------------------------->
+                    <!--------------------------- PLAYER AREA START ----------------------------------->
 
                     <div id='playerArea'>
                         <div class="video" id="player"></div>
@@ -211,8 +217,9 @@
                         <button id="syncbutton" onclick="syncVideo(roomnum);syncAlert()" style="margin-top:.5rem"
                             class="btn btn-primary"><i class="fa fa-sync"></i> Sync</button>
 
-                        <button id="loveButton" onclick="loveLive(roomnum)" style="margin-top:.5rem"
-                            class="btn btn-primary"><i class="far fa-heart"></i> Random K-pop</button>
+                        <!-- <button id="loveButton" onclick="loveLive(roomnum)" style="margin-top:.5rem"
+                            class="btn btn-primary"><i class="far fa-heart"></i> Random K-pop</button> -->
+                            
                         <!-- <br/> -->
                         <button id="hostbutton" onclick="changeHost(roomnum)" style="margin-top:.5rem"
                             class="btn btn-primary"><i class="fas fa-users"></i> Make me the host!</button>
@@ -221,8 +228,10 @@
                                 style="pointer-events:none;" class="fas fa-lightbulb"></i></button>
                     </div>
 
+
                     <!-- Div for lights off! -->
                     <div id='persoff'></div>
+
 
                     <div class="topbotmargins">
                         <input type="Video"
@@ -245,7 +254,7 @@
                         <br />
 
                     </div>
-                    <!---------------------- all controls button area ---------------------->
+                    <!---------------------- all controls button area end---------------------->
 
 
                     <!-- <input type="file" id="html5-input" /> -->
@@ -253,6 +262,9 @@
                     <div id="visual-queue" class="vid-list-container">
                         <ul class="vid-list" id="vidlist">
                             <li class="vid-item">
+
+                                <!-- this is where new playlist videos HTML is inserted pgcommented -->
+
                                 <!-- <div class="thumb">
                                     <a onClick="removeAt(0)" class="ghost-button-full-color"><i class="far fa-times-circle"></i></a>
                                     <img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg">
@@ -260,10 +272,11 @@
                                 <div class="desc">
                                     Jessica Hernandez & the Deltas - Dead Brains
                                 </div> -->
+
                             </li>
                         </ul>
                     </div>
-                    <div id="queue-arrows" class="arrows">
+                    <div id="queue-arrows" class="arrows" style="display: none;">
                         <div class="arrow-left">
                             <i class="fa fa-chevron-left fa-lg"></i>
                         </div>
@@ -287,7 +300,7 @@
                 </div>
 
                 <!-- /.col-lg-8 -->
-                <div class="col-lg-5">
+                 <div class="col-lg-5">   <!--this div has INVITE , CHATROOM, ONLINE USERS UI pgcommented -->
                     <!-- <div class="col-md-4"> -->
                     <!-- <div id="onlineArea" class="row"> -->
                     <h5 class="right-header">Online Users</h5>
@@ -660,6 +673,9 @@
                 var yt = data.vidlist.yt
                 var html = ''
                 if (yt.length > 0) {
+                    
+                    $("#queue-arrows").css("display","block");
+
                     for (i = 0; i < yt.length; i++) {
                         html += '<li class="vid-item"><div class="thumb"><a href="javascript: removeAt(' + i + ')" class="ghost-button-full-color"><i class="far fa-times-circle"></i></a><a href="javascript: playAt(' + i +
                             ')"><img src="http://img.youtube.com/vi/' + yt[i].videoId + '/0.jpg"></a></div><a href="javascript: playAt(' + i + ')" class="desc">' + yt[i].title + '</a></li>'
