@@ -104,7 +104,7 @@
 
         <!-- User Form (First Page) -->
         <div id="userFormArea" class="row justify-content-center">
-            <div class="col-md-8 col-sm-12 col-lg-6">
+            <div class="col-md-6 col-sm-12 col-lg-4">
 
                 <h3 class="text-center"> Join a Room! </h3>
                 <form id="userForm" class="bg-dark">
@@ -185,13 +185,14 @@
 
                     <!----------------------------------- PLAYER AREA ----------------------------------->
                     <!-- <hr> -->
+                
 
                     <!---------------------- all controls button area PGCOMMENTED ---------------------->
 
                     <!-- this is the player selection dropdown menu PGCOMMENTED-->
 
-                    <div style="margin: 10px" class="dropdown">
-                        <button style="background-color: #007bff" class="btn btn-info dropdown-toggle" type="button"
+                    <div style="display: inline-block;"class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button"
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-video"></i> Player
                         </button>
@@ -292,117 +293,116 @@
                         YouTube
                     </p>
 
-
-
                 </div>
 
-                <!-- /.col-lg-8 -->
-                <div class="col-lg-4 col-md-10">
-                    <!--this div has INVITE , CHATROOM, ONLINE USERS UI pgcommented -->
-                    <!-- <div class="col-md-4"> -->
-                    <!-- <div id="onlineArea" class="row"> -->
-                    <!-- code for chatrooom and message input -->
+            </div>
 
-                    <h5>Chatroom</h5>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-4 col-md-10">
+                <!--this div has INVITE , CHATROOM, ONLINE USERS UI pgcommented -->
+                <!-- <div class="col-md-4"> -->
+                <!-- <div id="onlineArea" class="row"> -->
+                <!-- code for chatrooom and message input -->
 
-                    <div id="messageArea">
-                        <!-- <h2 style="color:gray">Chat</h2> -->
-                        <!-- <div class="col-md-12"> -->
+                <h5>Chatroom</h5>
 
-                        <!-- Message display div pgcommented-->
-                        <div class="chat noscrollbar" id="chat"></div>
+                <div id="messageArea">
+                    <!-- <h2 style="color:gray">Chat</h2> -->
+                    <!-- <div class="col-md-12"> -->
 
-
-                        <!-- message typing box pgcommented -->
-                        <form id="messageForm">
-                            <div class="form-group">
-                                <!-- <label>Enter Message...</label> -->
-                                <input class="form-control chat-form" id="message" placeholder="Enter Message..." />
-
-                            </div>
-                        </form>
-
-                        <!-- </div> -->
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4">
+                    <!-- Message display div pgcommented-->
+                    <div class="chat noscrollbar" id="chat"></div>
 
 
-                    <h5 class="right-header">Online Users</h5>
-                    <hr style="height:0pt; visibility:hidden;" />
-
-                    <!-- <br/> -->
-                    <!-- <div class="col-md-12"> pgcommented-->
-
-                    <!-- all user list section PGCOMMENTED -->
-                    <div class="well online-users noscrollbar">
-                        <ul class="list-group" id="users"></ul>
-                    </div>
-
-                    <!-- Trigger INVITE MODAL with button PGCOMMENTED-->
-                    <button style="background-color: #007bff" type="button"
-                        class="nonmobile-hide btn btn-info btn-sm invite-button" data-toggle="modal"
-                        data-target="#inviteModal"><i style="width: 30px; height: 30px;"
-                            class="fas fa-user-plus"></i><br>
-                        <h5>Invite</h5>
-                    </button>
-
-                    <!-- </div> -->
-
-                    <hr style="height:0pt; visibility:hidden;" />
-
-                    <!-- INVITE Modal WHEN BUTTON PRESSED pgcommented -->
-                    <div id="inviteModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Invite a Friend</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Send a friend your unique room link so they can watch videos too!</p>
-                                    <!-- <p style="text-align: center;" id="invite">vynchronize.herokuapp.com/ROOMNUM</p> -->
-                                    <input class="inv_input" id="inv_input" type="text"
-                                        value="vynchronize.herokuapp.com/ROOMNUM" class="field left" readonly>
-                                </div>
-                                <div class="modal-footer">
-                                    <div style="opacity: 1" class="tooltip">
-                                        <button type="button" class="btn btn-default" onclick="copyInvite()"
-                                            onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy to
-                                                clipboard</span><i class="fas fa-clipboard"></i> Copy to
-                                            Clipboard</button>
-                                    </div>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
+                    <!-- message typing box pgcommented -->
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <!-- <label>Enter Message...</label> -->
+                            <input class="form-control chat-form" id="message" placeholder="Enter Message..." />
 
                         </div>
-                    </div>
-                    <!-- </div> -->
+                    </form>
+
                     <!-- </div> -->
 
                 </div>
+
             </div>
-            <div class="col-lg-1"></div>
-            <!-- /.col-md-4 -->
+
+            <div class="col-lg-4">
+
+
+                <h5 class="right-header">Online Users</h5>
+                <hr style="height:0pt; visibility:hidden;" />
+
+                <!-- <br/> -->
+                <!-- <div class="col-md-12"> pgcommented-->
+
+                <!-- all user list section PGCOMMENTED -->
+                <div class="well online-users noscrollbar">
+                    <ul class="list-group" id="users"></ul>
+                </div>
+
+                <!-- Trigger INVITE MODAL with button PGCOMMENTED-->
+                <button style="background-color: #007bff" type="button"
+                    class="nonmobile-hide btn btn-info btn-sm invite-button" data-toggle="modal"
+                    data-target="#inviteModal"><i style="width: 30px; height: 30px;" class="fas fa-user-plus"></i><br>
+                    <h5>Invite</h5>
+                </button>
+
+                <!-- </div> -->
+
+                <hr style="height:0pt; visibility:hidden;" />
+
+                <!-- INVITE Modal WHEN BUTTON PRESSED pgcommented -->
+                <div id="inviteModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Invite a Friend</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Send a friend your unique room link so they can watch videos too!</p>
+                                <!-- <p style="text-align: center;" id="invite">vynchronize.herokuapp.com/ROOMNUM</p> -->
+                                <input class="inv_input" id="inv_input" type="text"
+                                    value="vynchronize.herokuapp.com/ROOMNUM" class="field left" readonly>
+                            </div>
+                            <div class="modal-footer">
+                                <div style="opacity: 1" class="tooltip">
+                                    <button type="button" class="btn btn-default" onclick="copyInvite()"
+                                        onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy to
+                                            clipboard</span><i class="fas fa-clipboard"></i> Copy to
+                                        Clipboard</button>
+                                </div>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+
+            </div>
         </div>
+        <div class="col-lg-1"></div>
+        <!-- /.col-md-4 -->
+    </div>
 
-        <!-- /.row -->
+    <!-- /.row -->
 
-        <!-- Call to Action Well PGcommented-->
-        <!-- <div class="card text-white bg-secondary my-4 text-center">
+    <!-- Call to Action Well PGcommented-->
+    <!-- <div class="card text-white bg-secondary my-4 text-center">
                 <div class="card-body">
                     <p class="text-white m-0">*The synchronization may not be perfect! It's a work in progress, submit an issue on github if you wish to submit a bug report/suggestion.</p>
                 </div>
             </div> -->
 
-        <!-- Content Row -->
-        <!-- <div class="row">
+    <!-- Content Row -->
+    <!-- <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
@@ -414,8 +414,8 @@
             </div>
           </div>
         </div> -->
-        <!-- /.col-md-4 -->
-        <!-- <div class="col-md-4 mb-4">
+    <!-- /.col-md-4 -->
+    <!-- <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
               <h2 class="card-title">Card Two</h2>
@@ -426,8 +426,8 @@
             </div>
           </div>
         </div> -->
-        <!-- /.col-md-4 -->
-        <!-- <div class="col-md-4 mb-4">
+    <!-- /.col-md-4 -->
+    <!-- <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
               <h2 class="card-title">Card Three</h2>
@@ -438,14 +438,14 @@
             </div>
           </div>
         </div> -->
-        <!-- /.col-md-4 -->
+    <!-- /.col-md-4 -->
 
-        <!-- </div> -->
-        <!-- /.row -->
+    <!-- </div> -->
+    <!-- /.row -->
 
-        <!-- <hr style="height:20pt; visibility:hidden;" /> -->
+    <!-- <hr style="height:20pt; visibility:hidden;" /> -->
 
-        <!-- <section id="about" class="bg-light" PGcommented>
+    <!-- <section id="about" class="bg-light" PGcommented>
                 <hr style="height:100pt; visibility:hidden;" />
 
                 <div class="container">
@@ -461,9 +461,9 @@
                     </div>
                 </div>
             </section> -->
-        <!-- <hr style="height:20pt; visibility:hidden;" /> -->
+    <!-- <hr style="height:20pt; visibility:hidden;" /> -->
 
-        <!-- <section id="contact" class="bg-light" PGcommented>
+    <!-- <section id="contact" class="bg-light" PGcommented>
                 <hr style="height:100pt; visibility:hidden;" />
 
                 <div class="container">
