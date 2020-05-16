@@ -183,8 +183,9 @@
  }
 
  .chat {
-     width: 500px;
-     height: 300px;
+     min-width: 35vw;
+     min-height: 305px;
+     margin-bottom: 1vh;
      overflow: scroll;
      border: 1px solid gray;
  }
@@ -194,7 +195,7 @@
  }
 
  .chat-form {
-     width: 500px;
+     min-width: 35vw;
  }
 
  .online-users {

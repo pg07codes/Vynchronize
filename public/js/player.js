@@ -97,7 +97,7 @@ socket.on('createYoutube', function(data) {
 
         // The visual queue
         document.getElementById('visual-queue').style.display = 'block'
-        document.getElementById('queue-arrows').style.display = 'block'
+        document.getElementById('queue-arrows').style.display = 'block' 
         document.getElementById('beta-message').style.display = 'none'
         document.getElementById('enqueueButton').style.display = 'inline-block'
         document.getElementById('emptyButton').style.display = 'inline-block'
