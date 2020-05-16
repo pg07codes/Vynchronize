@@ -83,13 +83,12 @@
      text-align: center;
  }
 
- .random {
+ /* .random { pg
      margin: 10px;
      height: 30px;
      width: 120px;
      padding: 2px;
-     background-color: black;
- }
+ } */
 
  .right-header {
      float: right;
@@ -184,8 +183,9 @@
  }
 
  .chat {
-     width: 500px;
-     height: 300px;
+     min-width: 35vw;
+     min-height: 305px;
+     margin-bottom: 1vh;
      overflow: scroll;
      border: 1px solid gray;
  }
@@ -195,7 +195,7 @@
  }
 
  .chat-form {
-     width: 500px;
+     min-width: 35vw;
  }
 
  .online-users {
@@ -394,7 +394,7 @@
 
  .ghost-button-full-color {
      float: right;
-     display: inline-block;
+     /* display: inline-block; pgcommented as float / display dont work together*/
      width: 25px;
      padding-bottom: 10px;
      /* height: 25px; */
@@ -421,6 +421,10 @@
  }
 
 /* pg-styles */
+
+#userFormArea{
+    margin-top: 10vh;
+}
 
 #userForm{
     border: solid 1px;
